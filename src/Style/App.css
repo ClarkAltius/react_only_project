@@ -1,0 +1,16 @@
+/*생긴거 관리. classname 속싱이 app인 요소에 대해서 아래 내용을 적용*/
+
+.App{
+    text-align-last: left;
+    margin: 10px;
+    margin-bottom: 20px;
+
+}
+
+/*img 태그의 이미지 크기를 특정 픽셀로 지정*/
+img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /*이미지 비율 유지하며 잘림 발생 기능*/
+    margin: 10px auto 10px auto;
+}
