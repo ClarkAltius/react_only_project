@@ -13,39 +13,43 @@ function App(){
         <div className="App">
             <h1>React Example Navigation</h1>
             <table border="1">
-                <tr>
-                    {menuData.map((item)=>(
-                        <th>{item.chapter}</th>
-                    ))} 
-                </tr>
-                <tr>
-                    {menuData.map((item)=>(
-                        
-                        <td key={item.chapter}>
+                <thead>
+                    <tr>
+                        {menuData.map((item, index)=>(
+                            <th key={index}>{item.chapter}</th>
+                        ))} 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {menuData.map((item)=>(
+                            
+                            <td key={item.chapter}>
+                                <ul>
+                                    {item.items.map((bean) => (
+                                        <li key={bean.path}>
+                                            <Link to = {bean.path}>
+                                                {bean.label}
+                                            </Link>
+                                        </li>
+                                ))}
+                                </ul>
+                            </td>
+                        ))} 
+                        {/* <td>
                             <ul>
-                                {item.items.map((bean) => (
-                                    <li key={bean.path}>
-                                        <Link to = {bean.path}>
-                                            {bean.label}
-                                        </Link>
-                                    </li>
-                            ))}
+                                <li><Link to='/let_const'>let & const 실습</Link></li>
+                                <li><Link to='/template_string'>템플릿 문자열</Link></li>
+                                <li><Link to='/make_subject_list'>과목 목록 표시</Link></li>                            
+                                <li><Link to='/make_function'>함수 만들기</Link></li>   
+                                <li><Link to='/arrow_function'>화살표 함수</Link></li>   
+                                <li><Link to='/array_map'>배열 함수</Link></li>   
+                                <li><Link to='/spread_operator'>전개 연산자</Link></li>   
                             </ul>
-                        </td>
-                    ))} 
-                    {/* <td>
-                        <ul>
-                            <li><Link to='/let_const'>let & const 실습</Link></li>
-                            <li><Link to='/template_string'>템플릿 문자열</Link></li>
-                            <li><Link to='/make_subject_list'>과목 목록 표시</Link></li>                            
-                            <li><Link to='/make_function'>함수 만들기</Link></li>   
-                            <li><Link to='/arrow_function'>화살표 함수</Link></li>   
-                            <li><Link to='/array_map'>배열 함수</Link></li>   
-                            <li><Link to='/spread_operator'>전개 연산자</Link></li>   
-                        </ul>
-                    </td> */}
-                    <td>b</td>
-                </tr>
+                        </td> */}
+                        <td>b</td>
+                    </tr>
+                </tbody>
             </table>
             {/*라우터 모음*/}
             <AppRouters />

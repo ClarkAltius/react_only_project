@@ -1,13 +1,9 @@
-//this is the function template
-
 function App(){
-    console.log('Sample');
-
+    console.log('샘플');
     return(
         <div className="App">
-            Sampllllle
+            
         </div>
     );
 }
-
 export default App;

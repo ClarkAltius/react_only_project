@@ -1,7 +1,7 @@
 //'react-router-dom' 은 라우팅을 위한 라이브러리
 //기본으로 설치되어있지 않아 차후 설치 필요
 //npm install react-router-dom  <- 설치 커맨드
-import {Routes, Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 //ch02 
 //import 앱이름 from 전체경로/파일명
 import AppLetConst from './../components/ch02.es6_syntax/let_const';
@@ -17,10 +17,14 @@ import AppSpreadOperator from './../components/ch02.es6_syntax/spread_operator';
 import AppClassComponents from './../components/ch03.component/components01';
 import AppFunctionComponents from './../components/ch03.component/components02';
 import AppComponentSeparate from './../components/ch03.component/component_separate';
+import AppUseProps from './../components/ch03.component/use_props';
+import AppFileSeparator from './../components/ch03.component/file_separator';
+import AppMakeTable01 from './../components/ch03.component/array_and_tables_01';
 
-function AppRoutes(){
-    return(
+function AppRoutes() {
+    return (
         <Routes>
+            <Route path='/' element={<AppLetConst />} />
             <Route path='/let_const' element={<AppLetConst />} />
             <Route path='/template_string' element={<AppTemplateString />} />
             <Route path='/make_subject_list' element={<AppSubjectList />} />
@@ -33,11 +37,14 @@ function AppRoutes(){
             <Route path='/components01' element={<AppClassComponents />} />
             <Route path='/components02' element={<AppFunctionComponents />} />
             <Route path='/component_separate' element={<AppComponentSeparate />} />
-            
+            <Route path='/use_props' element={<AppUseProps />} />
+            <Route path='/file_separator' element={<AppFileSeparator />} />
+            <Route path='/array_and_tables_01' element={<AppMakeTable01 />} />
+
 
 
         </Routes>
     );
-};
+}
 
 export default AppRoutes;
