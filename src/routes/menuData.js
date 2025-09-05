@@ -23,6 +23,17 @@ export const menuData = [
             { path: '/use_props', label: '파일 분리 (props 사용)' },
             { path: '/file_separator', label: '파일 분리' },
             { path: '/array_and_tables_01', label: '배열과 표 만들기 01' },
+            { path: '/array_and_tables_02', label: '배열과 표 만들기 02' },
+        ]
+    },
+    {
+        chapter: "ch04. Event Handling",
+        items: [
+            { path: '/click_event', label: '클릭 이벤트' },
+            { path: '/change_event', label: '체인지 이벤트' },
+            { path: '/mouse_event', label: '마우스 이벤트' },
+            { path: '/key_event', label: '키 이벤트' },
+
         ]
     },
 

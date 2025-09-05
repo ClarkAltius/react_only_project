@@ -20,6 +20,13 @@ import AppComponentSeparate from './../components/ch03.component/component_separ
 import AppUseProps from './../components/ch03.component/use_props';
 import AppFileSeparator from './../components/ch03.component/file_separator';
 import AppMakeTable01 from './../components/ch03.component/array_and_tables_01';
+import AppMakeTable02 from './../components/ch03.component/array_and_tables_02';
+
+//ch04
+import AppClickEvent from './../components/ch04.event_handling/click_event';
+import AppChangeEvent from './../components/ch04.event_handling/change_event';
+import AppMouseEvent from './../components/ch04.event_handling/mouse_event';
+import AppKeyEvent from './../components/ch04.event_handling/key_event';
 
 function AppRoutes() {
     return (
@@ -33,13 +40,20 @@ function AppRoutes() {
             <Route path='/array_map' element={<AppArrayMap />} />
             <Route path='/spread_operator' element={<AppSpreadOperator />} />
 
-            //ch03
+            {/*ch03*/}
             <Route path='/components01' element={<AppClassComponents />} />
             <Route path='/components02' element={<AppFunctionComponents />} />
             <Route path='/component_separate' element={<AppComponentSeparate />} />
             <Route path='/use_props' element={<AppUseProps />} />
             <Route path='/file_separator' element={<AppFileSeparator />} />
             <Route path='/array_and_tables_01' element={<AppMakeTable01 />} />
+            <Route path='/array_and_tables_02' element={<AppMakeTable02 />} />
+
+            {/*ch04*/}
+            <Route path='/click_event' element={<AppClickEvent />} />
+            <Route path='/change_event' element={<AppChangeEvent />} />
+            <Route path='/mouse_event' element={<AppMouseEvent />} />
+            <Route path='/key_event' element={<AppKeyEvent />} />
 
 
 

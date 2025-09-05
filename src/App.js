@@ -1,41 +1,41 @@
 //특정 페이지로 이동하기 위한 링크
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 //개발자가 작성한 외부 파일
 import AppRouters from './routes/AppRoutes';
-import {menuData} from './routes/menuData';
+import { menuData } from './routes/menuData';
 
 //문서 스타일 담당
 import './Style/App.css';
 
-function App(){
-    return(
+function App() {
+    return (
         <div className="App">
             <h1>React Example Navigation</h1>
             <table border="1">
                 <thead>
                     <tr>
-                        {menuData.map((item, index)=>(
+                        {menuData.map((item, index) => (
                             <th key={index}>{item.chapter}</th>
-                        ))} 
+                        ))}
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        {menuData.map((item)=>(
-                            
+                        {menuData.map((item) => (
+
                             <td key={item.chapter}>
                                 <ul>
                                     {item.items.map((bean) => (
                                         <li key={bean.path}>
-                                            <Link to = {bean.path}>
+                                            <Link to={bean.path}>
                                                 {bean.label}
                                             </Link>
                                         </li>
-                                ))}
+                                    ))}
                                 </ul>
                             </td>
-                        ))} 
+                        ))}
                         {/* <td>
                             <ul>
                                 <li><Link to='/let_const'>let & const 실습</Link></li>
@@ -47,14 +47,14 @@ function App(){
                                 <li><Link to='/spread_operator'>전개 연산자</Link></li>   
                             </ul>
                         </td> */}
-                        <td>b</td>
+                        <td>hurhurhur burburbur :) </td>
                     </tr>
                 </tbody>
             </table>
             {/*라우터 모음*/}
             <AppRouters />
         </div>
-    );  
+    );
 }
 
-export default App ;
+export default App;
