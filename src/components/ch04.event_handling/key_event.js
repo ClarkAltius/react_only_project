@@ -20,11 +20,11 @@ function App() {
     }
     return (
         <div className="App">
-            <he>key 이벤트</he>
+            <h2>key 이벤트</h2>
             keyyyyyyyyyy
-            Key Down : <input onKeyDown={(event) => KeyboardEvent('hello', event)}
+            Key Down: <input onKeyDown={(event) => KeyboardEvent('hello', event)}
                 onKeyUp={(event) => KeyboardEvent('updy up', event)} /><br />
-        </div>
+        </div >
     );
 }
 export default App;

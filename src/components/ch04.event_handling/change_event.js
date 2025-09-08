@@ -3,7 +3,6 @@ function App() {
         // const eventArray = [];
         // for (const evt in event) {
         //     eventArray.push(evt);
-
         // }
         // console.log(eventArray);
         // console.log(`Event Type : ${event.type}`);
@@ -17,6 +16,7 @@ function App() {
         const target_value = event.target.value;
 
         console.log(`요소 아이디 :${target_id}`);
+
         if (target_id === "input_box") {
             console.log(`입력 상자 내용 : ${target_value}`);
         } else if (target_id === "menu_select") {
