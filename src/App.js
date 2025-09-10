@@ -1,9 +1,11 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 //특정 페이지로 이동하기 위한 링크
 import { Link } from 'react-router-dom';
 
 //개발자가 작성한 외부 파일
 import AppRouters from './routes/AppRoutes';
-import { menuData } from './routes/menuData';
+import { menuData } from './routes/menuData'
 
 //문서 스타일 담당
 import './Style/App.css';
@@ -47,7 +49,7 @@ function App() {
                                 <li><Link to='/spread_operator'>전개 연산자</Link></li>   
                             </ul>
                         </td> */}
-                        <td>hurhurhur burburbur :) </td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>

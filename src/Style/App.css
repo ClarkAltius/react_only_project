@@ -1,7 +1,7 @@
 /*생긴거 관리. classname 속싱이 app인 요소에 대해서 아래 내용을 적용*/
 
 .App {
-    text-align-last: left;
+    /* text-align: left; */
     margin: 10px;
     margin-bottom: 20px;
 

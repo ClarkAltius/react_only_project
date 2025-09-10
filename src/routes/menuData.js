@@ -44,8 +44,20 @@ export const menuData = [
             { path: '/use_state_01', label: 'Use State 01' },
             { path: '/use_state_02', label: 'Use State 02' },
             { path: '/use_state_03', label: 'Use State 03' },
+            { path: '/use_state_04', label: 'Use State 04' },
+            { path: '/use_effect_01', label: 'Use Effect 01' },
+            { path: '/use_effect_02', label: 'Use Effect 02' },
+            { path: '/use_effect_03', label: 'Use Effect 03' },
         ]
     },
+    {
+        chapter: "ch06. IT Cafe",
+        items: [
+            { path: '/coffee_bread_01', label: 'IT Cafe 01' },
+            { path: '/coffee_bread_02', label: 'IT Cafe 02' },
+        ]
+    },
+
 
     //여기에 4, 5장 등 내용을 계속 추가
 ];

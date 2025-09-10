@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css'; 
+import './index.css';
 import App from './App'; //App.js 파일ㅇ을 의미
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //리액트 라우터를 사용하기 위해서 browserrouter 를 app 외부에 감싸 주는 역할
 //App.js 파일을 index.js 파일이 포함하고 있음으로 BrowserRouter는 index.js파일에 한번만 명시.
