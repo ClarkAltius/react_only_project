@@ -24,6 +24,12 @@ function Main() {
         { id: 4, name: "카푸치노", price: 4000, category: 'beverage', stock: 444, image: 'cappuccino01.png', description: "스팀밀크와 거품을 올린 것을 섞어 만든 이탈리아의 전통적인 커피 음료입니다." }
     ]);
 
+    const [categoryTranslations, setCategoryTranslations] = useState({
+        bread: '빵',
+        beverage: '음료수',
+        cake: '케익'
+    });
+
     /**mode: 현재 상태의 모드 지정 */
     /**insert, update, delete, read, detail etc */
     const [mode, setMode] = useState('');
@@ -43,7 +49,19 @@ function Main() {
     //click button to change mode
     const ModeChanged = (mode) => {
         console.log(`1. 변경된 모드: ${mode}`);
-        setMode(mode);
+
+        if (mode === 'get_delete') {//사용자가 항목 삭제 시도
+            console.log(`Deleting item with ID : ${selectedId}`)
+            const remainProduct = getExceptData(selectedId);
+            setProducts(remainProduct);
+            setMode('read');
+            setSelectedId(null);
+            console.log('deleted?')
+        } else {
+            setMode(mode);
+
+        }
+
 
         // if (mode === 'get_update') {
         //     //     const currentProduct = getProductById();
@@ -114,6 +132,37 @@ function Main() {
     };
 
 
+    /*카테고리 정보는 동적으로 갱신되어야함으로 자바스크립트 배열을 만들어서 처리하는게 장기적으로 유용
+    1. 자바스크립트 배열로 카테고리 초기화
+    2. 관리해야하니까 state 처리
+    3. 폼 양식으로 카테고리를 동적으로 생성
+    4. 추가 삭제 작업 발생시 동적으로 갱신
+    */
+    const categoryList = [
+        { engCategoryName: 'bread', korCategoryName: '빵' },
+        { engCategoryName: 'beverage', korCategoryName: '음료수' },
+        { engCategoryName: 'cake', korCategoryName: '케익' },
+
+    ];
+
+    const [categories, setCategories] = useState(categoryList);
+
+    //카테고리 추가 화면에서 내용을 기입하고 추가 버튼 누름
+    const InsertCategory = (formData) => {
+        const newEngName = formData.engCategoryName.value;
+        const newKorName = formData.korCategoryName.value;
+        // formData는 신규 추가할 카테고리입니다.
+        const newCategory = { engCategoryName: formData.engCategoryName.value, korCategoryName: formData.korCategoryName.value };
+        const totalCategory = categories.concat(newCategory);
+        setCategories(totalCategory);
+        setCategoryTranslations(prevTranslations => ({
+            ...prevTranslations,
+            [newEngName]: newKorName
+        }))
+        setMode('read');
+    }
+
+
     console.log('3. Bottom에서 넘어옴');
     return (
         <Card>
@@ -122,7 +171,11 @@ function Main() {
             </Card.Header>
             <Card.Body>
                 {/** onClicktoContent가 리턴 된 후 ={ClickArrived} 동작한다*/}
-                <Content contents={products} onClickToContent={ClickArrived} />
+                <Content
+                    contents={products}
+                    onClickToContent={ClickArrived}
+                    translations={categoryTranslations}
+                />
             </Card.Body>
             <Card.Body>
                 <Switcher
@@ -130,6 +183,8 @@ function Main() {
                     product={getProductById()}
                     onSubmitInsert={InsertData}
                     onSubmitUpdate={UpdateData}
+                    onSubmitCategoryAdd={InsertCategory}
+                    categories={categories}
                 />
             </Card.Body>
             <Card.Footer>
